@@ -1,5 +1,7 @@
 # JobFinderWeb
+
 Job finder app built with:
+
 - Spring Framework 5.3.0
 - Spring Data JPA 2.4.0
 - Spring Security 5.4.1
