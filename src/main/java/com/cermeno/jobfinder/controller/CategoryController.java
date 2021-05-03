@@ -1,4 +1,4 @@
-package com.cermeno.controller;
+package com.cermeno.jobfinder.controller;
 
 import lombok.Getter;
 import lombok.Setter;

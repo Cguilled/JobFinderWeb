@@ -1,4 +1,4 @@
-package com.cermeno.controller;
+package com.cermeno.jobfinder.controller;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -7,20 +7,24 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.cermeno.model.VacantPosition;
-import com.cermeno.service.VacantServiceImpl;
+import com.cermeno.jobfinder.model.VacantPosition;
+import com.cermeno.jobfinder.service.VacantServiceImpl;
+import org.springframework.web.bind.annotation.RestController;
 
 @Getter
 @Setter
-@Controller
+@RestController
 public class HomeController {
-	
-	@Autowired
+
 	private VacantServiceImpl vacantService;
+
+	@Autowired
+	public HomeController(VacantServiceImpl vacantService) {
+		this.vacantService = vacantService;
+	}
 
 	@GetMapping("/")
 	public String showHome(Model model) {

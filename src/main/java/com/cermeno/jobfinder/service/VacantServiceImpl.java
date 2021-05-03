@@ -1,4 +1,4 @@
-package com.cermeno.service;
+package com.cermeno.jobfinder.service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.cermeno.model.VacantPosition;
+import com.cermeno.jobfinder.model.VacantPosition;
 
 @Service
 public class VacantServiceImpl implements VacantService {
