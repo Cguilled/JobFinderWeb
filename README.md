@@ -9,3 +9,6 @@ Job finder app built with:
 - Spring Tools 4
 - Hibernate Core 5.4.22
 - MySQL 8.0.22.
+
+# Trello
+https://trello.com/b/J4ZMlKX4
