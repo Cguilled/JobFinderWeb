@@ -8,7 +8,7 @@
         <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.cermeno</groupId>
+    <groupId>com.cermeno.jobfinder</groupId>
     <artifactId>job-finder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>job-finder</name>
@@ -19,7 +19,7 @@
     </properties>
 
     <dependencies>
-        <!--        Spring dependencies-->
+        <!-- Spring Boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
