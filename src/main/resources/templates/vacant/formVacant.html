@@ -33,7 +33,7 @@
 					<strong>Datos de la oferta de trabajo</strong>
 				</h4>
 				<div class="card-body">
-					<form th:action="@{/templates/vacant/save}" method="post"
+					<form th:action="@{/vacant/save}" method="post"
                           th:object="${vacantPosition}">
 						
 						<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger'

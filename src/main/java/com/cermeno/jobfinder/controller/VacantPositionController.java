@@ -38,7 +38,7 @@ public class VacantPositionController {
 	@GetMapping("/index")
 	public String showIndex(Model model) {
 		List<VacantPosition> vacants = vacantService.findAll();
-		model.addAttribute("vacant", vacants);
+		model.addAttribute("vacants", vacants);
 		return "vacant/listVacant";
 	}
 
