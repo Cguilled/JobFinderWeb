@@ -1,4 +1,4 @@
-package com.cermeno.model;
+package com.cermeno.jobfinder.model;
 
 import java.util.Date;
 
