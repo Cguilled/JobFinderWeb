@@ -61,7 +61,7 @@
                 <h6 class="card-title">
                     <strong>Publicado: </strong> <span th:text="${vacant.date}"></span>
                 </h6>
-                <p th:text="${vacant.description}"></p>
+                <p th:text="${vacant.description}"/>
                 <p>
                     <a class="btn btn-secondary" th:href="@{vacant/view/{id} (id=${vacant.id})}" role="button">Detalles
                         &raquo;</a>
