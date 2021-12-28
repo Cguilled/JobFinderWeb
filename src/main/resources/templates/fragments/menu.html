@@ -9,12 +9,20 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/vacant/index}">Vacantes</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 1</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 2</a></li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{http://localhost:8080/}">Inicio</a>   <!--/* Replace this URL */-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/vacant/index}">Vacants</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu 2</a>
+            </li>
         </ul>
-        <a class="btn btn-primary" href="#">Iniciar sesi&oacute;n</a>&nbsp; <a
-            class="btn btn-primary" href="#">Registrarse</a>
+        <a class="btn btn-primary" href="#">Sign in</a>&nbsp;
+        <a class="btn btn-primary" href="#">Sign up</a>
     </div>
 </nav>

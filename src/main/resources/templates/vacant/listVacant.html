@@ -50,10 +50,10 @@
 						<tbody>
 							<tr th:each="vacant: ${vacants}">
 								<td>Ventas</td>
-								<td th:text="${vacant.name}" />
-								<td th:text="${vacant.date}" />
-								<td th:text="${vacant.status}" />
-								<td th:text="${vacant.highlighted ? 'Yes' : 'No'}" />
+								<td th:text="${vacant.name}"></td>
+								<td th:text="${vacant.date}"></td>
+								<td th:text="${vacant.status}"></td>
+								<td th:text="${vacant.highlighted ? 'Yes' : 'No'}"></td>
 								<td><a href="#" class="btn btn-success btn-sm"
 									role="button" title="Editar oferta"><i
 										class="fas fa-pencil-alt" aria-hidden="true"></i></a> <a href="#"
