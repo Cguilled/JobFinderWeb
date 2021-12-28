@@ -24,7 +24,15 @@ public class HomeController {
 
     @GetMapping("/")
     public String showHome(Model model) {
-        // TODO Add @RequestMapping("/") to the class, update method mapping URI
+//		String job = "Auxiliar de contabilidad";
+//		Date publicationDate = new Date();
+//		double salary = 1200;
+//		boolean active = true;
+//
+//		model.addAttribute("job", job);
+//		model.addAttribute("date", publicationDate);
+//		model.addAttribute("salary", salary);
+//		model.addAttribute("active", active);
 
         List<VacantPosition> vacants = vacantService.findAll();
         model.addAttribute("vacantPositions", vacants);

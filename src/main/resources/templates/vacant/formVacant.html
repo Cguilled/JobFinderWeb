@@ -33,20 +33,21 @@
 					<strong>Datos de la oferta de trabajo</strong>
 				</h4>
 				<div class="card-body">
-					<form th:action="@{/vacant/save}" method="post" th:object="${vacantPosition}">
+					<form th:action="@{/vacant/save}" method="post"
+                          th:object="${vacantPosition}">
 						
 						<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger'
 							role='alert'>
 							Something went wrong...
 							<ul>
-								<li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+								<li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
 							</ul>
 						</div>
 						
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="name">Nombre</label> <input type="text"
+									<label for="nombre">Nombre</label> <input type="text"
 										class="form-control" id="name" name="name"
 										placeholder="Titulo de la oferta de trabajo"
 										required="required">
@@ -54,7 +55,7 @@
 							</div>
 							<div class="col-md-9">
 								<div class="form-group">
-									<label for="description">Descripción</label> <input type="text"
+									<label for="descripcion">Descripción</label> <input type="text"
 										class="form-control" id="description" name="description"
 										placeholder="Breve descripcion de la oferta de trabajo"
 										required="required">
@@ -94,31 +95,30 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-check">
-									<label class="form-check-label" for="highlighted0"></label>
-									<br>
-									<input class="form-check-input" type="radio" name="highlighted" id="highlighted"
-										   value="1" checked="checked">
-									<label class="form-check-label" for="highlighted1">Destacado</label>
+									<label class="form-check-label" for="destacado0"></label> <br>
+									<input class="form-check-input" type="radio" name="highlighted"
+										id="highlighted" value="1" checked="checked"> <label
+										class="form-check-label" for="destacado1">Destacado</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="highlighted" id="notHighlighted"
-										   value="0">
-									<label class="form-check-label" for="highlighted2">No Destacado</label>
+									<input class="form-check-input" type="radio" name="highlighted"
+										id="highlighted" value="0"> <label
+										class="form-check-label" for="destacado2">No Destacado</label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="salary">Salario Ofrecido (Aprox)</label>
-									<input type="text" class="form-control" name="salary" id="salary"
-										   placeholder="Salario aproximado." required="required">
+									<label for="salary">Salario Ofrecido (Aprox)</label> <input
+										type="text" class="form-control" name="salary" id="salary"
+										placeholder="Salario aproximado." required="required">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="logo">Imagen</label>
-									<input type="file" class="form-control-file" name="logo" id="logo">
+									<label for="logo">Imagen</label> <input type="file"
+										class="form-control-file" name="logo" id="logo">
 								</div>
 							</div>
 						</div>
@@ -132,9 +132,10 @@
 								</div>
 							</div>
 							<div class="col-md-3">
-								<label for="image">Imagen/Logo</label>
-								<img id="image" class="rounded mx-auto d-block" th:src="@{/images/construccion-logo.png}"
-									 alt="Generic placeholder image" width="200" height="200">
+								<label for="imagen">Imagen/Logo</label> <img
+									class="rounded mx-auto d-block"
+									th:src="@{/images/construccion-logo.png}"
+									alt="Generic placeholder image" width="200" height="200">
 							</div>
 						</div>
 						<button id="saveButton" type="submit" class="btn btn-primary">Guardar</button>

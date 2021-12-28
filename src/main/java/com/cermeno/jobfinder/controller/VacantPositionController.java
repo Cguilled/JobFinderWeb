@@ -32,7 +32,8 @@ public class VacantPositionController {
 
 	@Autowired
 	private VacantService vacantService;
-
+	
+//	Logger logger = Logger.getLogger(VacantsController.class);
 
 	@GetMapping("/index")
 	public String showIndex(Model model) {
@@ -51,10 +52,12 @@ public class VacantPositionController {
 	public String save(VacantPosition vacant, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			for (ObjectError error : bindingResult.getAllErrors()) {
+//				logger.error(error.getDefaultMessage());
 				System.err.println(error.getDefaultMessage());
 			}
 			return "vacant/formVacant";
 		}
+//		logger.info("Vacant: " + vacant.toString());
 		System.out.println("Vacant: " + vacant.toString());
 		vacantService.save(vacant);
 		return "redirect:/vacant/index";
@@ -74,18 +77,15 @@ public class VacantPositionController {
 
 	@GetMapping("/delete")
 	public String delete(@RequestParam("id") int vacantId, Model model) {
+//		logger.info("Deleting vacant position id: " + vacantId);
 		System.out.println("Deleting vacant position id: " + vacantId);
 		model.addAttribute("id", vacantId);
 		return "deletingMessage";
 	}
 
-	/**
-	 * Spring date converter.
-	 * Formats the date.
-	 * @param webDataBinder data binder.
-	 */
+	// Conversor de fechas de Spring
 	@InitBinder
-	public void dateFormatConverter(WebDataBinder webDataBinder) {
+	public void initBinder(WebDataBinder webDataBinder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
