@@ -46,8 +46,15 @@ public class VacantPositionController {
 		return "vacant/formVacant";
 	}
 
+	/**
+	 * Saves a new vacant position.
+	 *
+	 * @param vacantPosition the object to be saved.
+	 * @param bindingResult
+	 * @return {@code String} the destination page to navigate.
+	 */
 	@PostMapping("/save")
-	public String save(VacantPosition vacant, BindingResult bindingResult) {
+	public String save(VacantPosition vacantPosition, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			for (ObjectError error : bindingResult.getAllErrors()) {
 				System.err.println(error.getDefaultMessage());
@@ -55,8 +62,8 @@ public class VacantPositionController {
 			return "vacant/formVacant";
 		}
 
-		System.out.println("Vacant: " + vacant.toString());
-		vacantService.save(vacant);
+		System.out.println("Vacant: " + vacantPosition.toString());
+		vacantService.save(vacantPosition);
 		return "redirect:/vacant/index";
 	}
 
