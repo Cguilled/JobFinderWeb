@@ -36,6 +36,9 @@
 						title="Crear nueva oferta de trabajo" role="button"><i
 						class="fas fa-file" aria-hidden="true"></i> Nueva</a>
 					<hr>
+
+					<div th:if="${message != null}" class="alert alert-success" th:text="${message}" role="alert"></div>
+
 					<table class="table table-hover">
 						<thead class="thead-light">
 							<tr>
