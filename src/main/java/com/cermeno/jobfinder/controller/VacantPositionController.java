@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cermeno.jobfinder.model.VacantPosition;
 import com.cermeno.jobfinder.service.VacantService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Getter
 @Setter
@@ -54,7 +55,7 @@ public class VacantPositionController {
 	 * @return {@code String} the destination page to navigate.
 	 */
 	@PostMapping("/save")
-	public String save(VacantPosition vacantPosition, BindingResult bindingResult) {
+	public String save(VacantPosition vacantPosition, BindingResult bindingResult, RedirectAttributes redirectAttribute) {
 		if (bindingResult.hasErrors()) {
 			for (ObjectError error : bindingResult.getAllErrors()) {
 				System.err.println(error.getDefaultMessage());
@@ -64,6 +65,7 @@ public class VacantPositionController {
 
 		System.out.println("Vacant: " + vacantPosition.toString());
 		vacantService.save(vacantPosition);
+		redirectAttribute.addFlashAttribute("message", "Vacant position saved.");
 		return "redirect:/vacant/index";
 	}
 
