@@ -51,19 +51,17 @@ public class VacantPositionController {
 	 * Saves a new vacant position.
 	 *
 	 * @param vacantPosition the object to be saved.
-	 * @param bindingResult
+	 * @param bindingResult data binder.
+	 * @param redirectAttribute flash attribute added to session.
 	 * @return {@code String} the destination page to navigate.
 	 */
 	@PostMapping("/save")
 	public String save(VacantPosition vacantPosition, BindingResult bindingResult, RedirectAttributes redirectAttribute) {
 		if (bindingResult.hasErrors()) {
-			for (ObjectError error : bindingResult.getAllErrors()) {
-				System.err.println(error.getDefaultMessage());
-			}
 			return "vacant/formVacant";
 		}
 
-		System.out.println("Vacant: " + vacantPosition.toString());
+		System.out.println("New vacant: " + vacantPosition.toString());
 		vacantService.save(vacantPosition);
 		redirectAttribute.addFlashAttribute("message", "Vacant position saved.");
 		return "redirect:/vacant/index";
