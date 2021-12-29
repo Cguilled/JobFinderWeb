@@ -34,22 +34,23 @@
 				</h4>
 				<div class="card-body">
 					<form th:action="@{/vacant/save}" method="post" th:object="${vacantPosition}">
-						
+
+						<!-- Search for any errors in the data binding -->
 						<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger'
 							role='alert'>
 							Something went wrong...
 							<ul>
-								<li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+								<li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
 							</ul>
 						</div>
 						
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="name">Nombre</label> <input type="text"
-										class="form-control" id="name" name="name"
-										placeholder="Titulo de la oferta de trabajo"
-										required="required">
+									<label for="name">Nombre</label>
+									<input type="text" class="form-control" id="name" name="name"
+										   placeholder="Titulo de la oferta de trabajo"
+										   required="required">
 								</div>
 							</div>
 							<div class="col-md-9">
