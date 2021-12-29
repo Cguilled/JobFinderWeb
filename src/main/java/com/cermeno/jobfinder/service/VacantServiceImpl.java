@@ -76,7 +76,7 @@ public class VacantServiceImpl implements VacantService {
 				return Optional.of(vacantPosition);
 			}
 		}
-		return Optional.of(new VacantPosition());
+		return Optional.empty();
 	}
 
 	@Override

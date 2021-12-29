@@ -27,17 +27,23 @@
 
 			<div class="card">
 				<h4 class="card-header">
-					<strong>Datos de la categoría</strong>
+					<strong>Category data</strong>
 				</h4>
 				<div class="card-body">
-					<form th:action="@{/categories/save}" method="post">
+					<form th:action="@{/category/save}" method="post" th:object="${category}">
+						<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger' role='alert'>
+							Something went wrong...
+							<ul>
+								<li th:each="error : ${#fields.errors('*')}" th:text="${error}"></li>
+							</ul>
+						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="name">Nombre</label> <input type="text"
-										class="form-control" id="name" name="name"
-										placeholder="Escriba el nombre de la categoria"
-										required="required">
+									<label for="name">Nombre</label>
+									<input type="text" class="form-control" id="name" name="name"
+										   placeholder="Escriba el nombre de la categoria"
+										   required="required">
 								</div>
 							</div>
 						</div>
@@ -51,8 +57,8 @@
 							</div>
 						</div>
 						<hr>
-						<button type="submit" title="Guardar el registro"
-							class="btn btn-primary">Guardar</button>
+						<button type="submit" title="Save"
+							class="btn btn-primary">Save</button>
 					</form>
 				</div>
 			</div>
