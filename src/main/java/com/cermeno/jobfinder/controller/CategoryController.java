@@ -41,7 +41,7 @@ public class CategoryController {
      * @param category category to save.
      * @param bindingResult data binder.
      * @param redirectAttribute flash attribute added to session.
-     * @return
+     * @return {@code String} the destination page to navigate.
      */
     @PostMapping("/save")
     public String save(Category category, BindingResult bindingResult, RedirectAttributes redirectAttribute) {
